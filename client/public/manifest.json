@@ -1,7 +1,7 @@
 {
-  "name": "OpenMedia Universal Player",
-  "short_name": "OpenMedia",
-  "description": "Universal media player supporting audio, video, documents, images, and archives",
+  "name": "OmniPlay Universal Media Player",
+  "short_name": "OmniPlay",
+  "description": "Open source universal media player supporting audio, video, documents, images, and archives",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -18,7 +18,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="openmedia-theme">
+    <ThemeProvider defaultTheme="system" storageKey="omniplay-theme">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
