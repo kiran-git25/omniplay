@@ -56,6 +56,23 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    /* Improve touch targets on mobile */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Prevent zoom on input focus (iOS) */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Enable text selection for content areas */
+  .selectable {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  /* Improve touch scrolling on mobile */
+  .scroll-area {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -65,5 +82,53 @@
 }
 
 .dropzone-active {
-  @apply border-primary bg-blue-50;
+  @apply border-primary bg-blue-50 dark:bg-blue-950;
+}
+
+/* Cross-platform optimizations */
+@media (max-width: 768px) {
+  /* Larger touch targets for mobile */
+  .mobile-touch {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing on mobile */
+  .mobile-spacing {
+    padding: 1rem;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+  .desktop-optimized {
+    /* Improved hover states for desktop */
+    transition: all 0.2s ease;
+  }
+}
+
+/* Universal file drop zone */
+.universal-dropzone {
+  border: 2px dashed #cbd5e0;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.universal-dropzone:hover,
+.universal-dropzone.drag-over {
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive media player */
+.responsive-player {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+
+@media (max-width: 640px) {
+  .responsive-player {
+    max-height: 60vh;
+  }
 }

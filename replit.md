@@ -49,11 +49,13 @@ The application implements a dual storage approach:
 
 ### UI Components
 - **Design System**: shadcn/ui components with New York style variant
-- **Cross-Device Support**: PWA capabilities with mobile app-like experience
-- **Responsive Design**: Mobile-first approach with Tailwind CSS, optimized for phones, tablets, and desktops
-- **Dark Mode**: CSS variables-based theming support for all device types
-- **Accessibility**: ARIA-compliant components from Radix UI
-- **Universal Compatibility**: Works on iOS, Android, Windows, macOS, and Linux devices
+- **Cross-Device Support**: Full PWA capabilities with service worker, offline support, and installable on all devices
+- **Responsive Design**: Mobile-first approach with enhanced touch targets (44px minimum) and optimized layouts
+- **Platform Optimizations**: Touch-friendly controls for mobile, hover states for desktop, proper scaling for tablets
+- **Dark Mode**: CSS variables-based theming support with automatic system preference detection
+- **Accessibility**: ARIA-compliant components from Radix UI with screen reader support
+- **Universal Compatibility**: Native-like experience on iOS, Android, Windows, macOS, and Linux devices
+- **Performance**: Service worker caching, lazy loading, and optimized for 3G networks
 
 ## Data Flow
 

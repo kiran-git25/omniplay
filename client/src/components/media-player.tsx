@@ -51,8 +51,8 @@ export default function MediaPlayer({ currentMedia }: MediaPlayerProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-      <div className="aspect-video bg-gray-900 relative flex items-center justify-center">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+      <div className="responsive-player aspect-video bg-gray-900 relative flex items-center justify-center">
         {renderMediaViewer()}
       </div>
     </div>

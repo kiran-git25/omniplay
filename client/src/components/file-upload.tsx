@@ -66,39 +66,43 @@ export default function FileUpload({ onFileUploaded }: FileUploadProps) {
   }, [handleFileUpload]);
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Upload Media Files</h2>
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6">
+      <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Upload Media Files</h2>
       
       <div
-        className={`border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-200 ${
+        className={`universal-dropzone p-6 sm:p-8 text-center cursor-pointer mobile-touch ${
           isDragging 
-            ? 'border-primary bg-blue-50' 
-            : 'border-gray-300 hover:border-primary hover:bg-blue-50'
+            ? 'drag-over border-primary bg-blue-50 dark:bg-blue-950' 
+            : 'border-gray-300 dark:border-gray-600 hover:border-primary hover:bg-blue-50 dark:hover:bg-blue-950'
         } ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={() => !isUploading && document.getElementById('fileInput')?.click()}
+        onTouchStart={() => !isUploading && document.getElementById('fileInput')?.click()}
       >
         <div className="flex flex-col items-center space-y-4">
           <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
             <CloudUpload className="w-8 h-8 text-gray-400" />
           </div>
           <div>
-            <p className="text-lg font-medium text-gray-900">
-              {isUploading ? 'Uploading...' : 'Drop files here or click to browse'}
+            <p className="text-lg font-medium text-gray-900 dark:text-white">
+              {isUploading ? 'Uploading...' : 'Drop files here or tap to browse'}
             </p>
-            <p className="text-sm text-gray-500 mt-1">
-              Supports audio, video, documents, images, and archives
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              Universal support: Audio, Video, Documents, Images, Archives
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+              Works on all devices: Phone, Tablet, Desktop
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 text-xs text-gray-400">
-            <span className="bg-gray-100 px-2 py-1 rounded">MP3</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">MP4</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">PDF</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">ZIP</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">JPG</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">+50 more</span>
+          <div className="flex flex-wrap gap-2 text-xs text-gray-400 dark:text-gray-500">
+            <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">MP3</span>
+            <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">MP4</span>
+            <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">PDF</span>
+            <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">ZIP</span>
+            <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">JPG</span>
+            <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">+50 more</span>
           </div>
         </div>
       </div>

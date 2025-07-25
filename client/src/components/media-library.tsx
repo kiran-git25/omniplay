@@ -71,10 +71,10 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-full">
-      <div className="p-4 border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 h-full">
+      <div className="p-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-gray-900">Media Library</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Media Library</h3>
           <div className="flex items-center space-x-2">
             <Button
               variant={viewMode === 'list' ? 'default' : 'ghost'}
@@ -93,10 +93,11 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           </div>
         </div>
         
-        <div className="flex space-x-1 mt-3">
+        <div className="flex flex-wrap gap-1 mt-3">
           <Button
             variant={filter === 'all' ? 'default' : 'ghost'}
             size="sm"
+            className="mobile-touch"
             onClick={() => setFilter('all')}
           >
             All
@@ -104,6 +105,7 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           <Button
             variant={filter === 'audio' ? 'default' : 'ghost'}
             size="sm"
+            className="mobile-touch"
             onClick={() => setFilter('audio')}
           >
             Audio
@@ -111,6 +113,7 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           <Button
             variant={filter === 'video' ? 'default' : 'ghost'}
             size="sm"
+            className="mobile-touch"
             onClick={() => setFilter('video')}
           >
             Video
@@ -118,6 +121,7 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           <Button
             variant={filter === 'document' ? 'default' : 'ghost'}
             size="sm"
+            className="mobile-touch"
             onClick={() => setFilter('document')}
           >
             Docs
@@ -125,6 +129,7 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           <Button
             variant={filter === 'image' ? 'default' : 'ghost'}
             size="sm"
+            className="mobile-touch"
             onClick={() => setFilter('image')}
           >
             Images
@@ -132,6 +137,7 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           <Button
             variant={filter === 'archive' ? 'default' : 'ghost'}
             size="sm"
+            className="mobile-touch"
             onClick={() => setFilter('archive')}
           >
             Archives

@@ -1,9 +1,17 @@
-import { PlayIcon, Grid3x3, Search, Settings, Menu } from "lucide-react";
+import { PlayIcon, Grid3x3, Search, Settings, Menu, Sun, Moon, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/lib/theme-provider";
 import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { setTheme, theme } = useTheme();
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
@@ -41,10 +49,35 @@ export default function Header() {
             <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               <Search className="w-5 h-5" />
             </Button>
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+                  {theme === "light" ? <Sun className="w-5 h-5" /> : 
+                   theme === "dark" ? <Moon className="w-5 h-5" /> : 
+                   <Monitor className="w-5 h-5" />}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                  <Sun className="mr-2 h-4 w-4" />
+                  Light
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                  <Moon className="mr-2 h-4 w-4" />
+                  Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+                  <Monitor className="mr-2 h-4 w-4" />
+                  System
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <Button 
               variant="ghost" 
               size="icon" 
-              className="md:hidden text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              className="md:hidden text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary mobile-touch"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <Menu className="w-5 h-5" />
