@@ -20,8 +20,18 @@ function getFileType(mimeType: string): string {
   if (mimeType.startsWith('audio/')) return 'audio';
   if (mimeType.startsWith('video/')) return 'video';
   if (mimeType.startsWith('image/')) return 'image';
-  if (mimeType === 'application/pdf') return 'document';
-  if (mimeType === 'text/plain' || mimeType === 'text/markdown') return 'document';
+  if (mimeType === 'application/pdf' || 
+      mimeType === 'text/plain' || 
+      mimeType === 'text/markdown' ||
+      mimeType === 'application/msword' ||
+      mimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
+      mimeType === 'application/rtf') return 'document';
+  if (mimeType === 'application/zip' || 
+      mimeType === 'application/x-rar-compressed' ||
+      mimeType === 'application/x-7z-compressed' ||
+      mimeType === 'application/x-tar' ||
+      mimeType === 'application/gzip' ||
+      mimeType === 'application/x-bzip2') return 'archive';
   return 'document';
 }
 
@@ -47,7 +57,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/media/type/:type", async (req, res) => {
     try {
       const { type } = req.params;
-      if (!['audio', 'video', 'image', 'document'].includes(type)) {
+      if (!['audio', 'video', 'image', 'document', 'archive'].includes(type)) {
         return res.status(400).json({ message: "Invalid media type" });
       }
       const files = await storage.getMediaFilesByType(type);

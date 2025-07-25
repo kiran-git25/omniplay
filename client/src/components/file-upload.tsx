@@ -89,16 +89,16 @@ export default function FileUpload({ onFileUploaded }: FileUploadProps) {
               {isUploading ? 'Uploading...' : 'Drop files here or click to browse'}
             </p>
             <p className="text-sm text-gray-500 mt-1">
-              Supports audio, video, documents, and images
+              Supports audio, video, documents, images, and archives
             </p>
           </div>
           <div className="flex flex-wrap gap-2 text-xs text-gray-400">
             <span className="bg-gray-100 px-2 py-1 rounded">MP3</span>
             <span className="bg-gray-100 px-2 py-1 rounded">MP4</span>
             <span className="bg-gray-100 px-2 py-1 rounded">PDF</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">TXT</span>
+            <span className="bg-gray-100 px-2 py-1 rounded">ZIP</span>
             <span className="bg-gray-100 px-2 py-1 rounded">JPG</span>
-            <span className="bg-gray-100 px-2 py-1 rounded">+more</span>
+            <span className="bg-gray-100 px-2 py-1 rounded">+50 more</span>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function FileUpload({ onFileUploaded }: FileUploadProps) {
         id="fileInput"
         multiple
         className="hidden"
-        accept=".mp3,.mp4,.avi,.mov,.pdf,.txt,.md,.jpg,.png,.gif,.svg,.wav,.ogg,.webm,.docx,.epub"
+        accept=".mp3,.mp4,.avi,.mov,.mkv,.flv,.wmv,.m4v,.3gp,.pdf,.txt,.md,.doc,.docx,.epub,.rtf,.odt,.jpg,.jpeg,.png,.gif,.svg,.bmp,.webp,.tiff,.wav,.ogg,.webm,.aac,.flac,.m4a,.zip,.rar,.7z,.tar,.gz,.bz2,.xz"
         onChange={handleFileSelect}
         disabled={isUploading}
       />

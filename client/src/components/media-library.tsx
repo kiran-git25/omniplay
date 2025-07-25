@@ -9,6 +9,7 @@ import {
   Camera,
   File,
   Crop,
+  Archive,
   EllipsisVerticalIcon
 } from "lucide-react";
 import { formatFileSize, formatDuration } from "@/lib/file-utils";
@@ -20,7 +21,7 @@ interface MediaLibraryProps {
 
 export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibraryProps) {
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
-  const [filter, setFilter] = useState<'all' | 'audio' | 'video' | 'document' | 'image'>('all');
+  const [filter, setFilter] = useState<'all' | 'audio' | 'video' | 'document' | 'image' | 'archive'>('all');
 
   const { data: mediaFiles = [], isLoading } = useQuery<MediaFile[]>({
     queryKey: ['/api/media'],
@@ -40,6 +41,8 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
         return <File className="w-5 h-5 text-blue-600" />;
       case 'image':
         return <Crop className="w-5 h-5 text-purple-600" />;
+      case 'archive':
+        return <Archive className="w-5 h-5 text-orange-600" />;
       default:
         return <File className="w-5 h-5 text-gray-600" />;
     }
@@ -126,6 +129,13 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
           >
             Images
           </Button>
+          <Button
+            variant={filter === 'archive' ? 'default' : 'ghost'}
+            size="sm"
+            onClick={() => setFilter('archive')}
+          >
+            Archives
+          </Button>
         </div>
       </div>
 
@@ -150,6 +160,7 @@ export default function MediaLibrary({ onMediaSelect, currentMedia }: MediaLibra
                   file.type === 'audio' ? 'bg-green-100' :
                   file.type === 'video' ? 'bg-red-100' :
                   file.type === 'document' ? 'bg-blue-100' :
+                  file.type === 'archive' ? 'bg-orange-100' :
                   'bg-purple-100'
                 }`}>
                   {getFileIcon(file)}

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern full-stack media management application built with React, Express.js, and TypeScript. The application provides a comprehensive media player that supports multiple file types including audio, video, images, and documents (PDF and text/markdown). It features a drag-and-drop file upload system, media library management, and specialized viewers for different content types.
+This is a universal open source media player web application built with React, Express.js, and TypeScript. The application functions like a combination of VLC Media Player and 7-Zip, supporting comprehensive file format playback and archive management. It provides cross-device compatibility with PWA capabilities and supports audio, video, images, documents, and archive files with specialized viewers for each content type.
 
 ## User Preferences
 
@@ -34,22 +34,26 @@ The application implements a dual storage approach:
 ## Key Components
 
 ### Media Management
-- **File Upload**: Drag-and-drop interface with progress tracking and error handling
-- **Media Library**: Organized view with filtering by media type (audio, video, image, document)
+- **File Upload**: Universal drag-and-drop interface supporting 50+ file formats with progress tracking and error handling
+- **Media Library**: Organized view with filtering by media type (audio, video, image, document, archive)
+- **Archive Support**: Full ZIP, RAR, 7Z, TAR, GZIP archive viewing and extraction capabilities like 7-Zip
 - **File Metadata**: Comprehensive tracking including original name, MIME type, size, duration (for media files)
 
 ### Media Viewers
-- **Audio Player**: Custom controls with play/pause, seek, volume, and duration display
-- **Video Player**: Full-featured player with standard media controls
-- **Image Viewer**: Zoom controls and fullscreen viewing capabilities
+- **Audio Player**: Custom controls with play/pause, seek, volume, and duration display (supports MP3, WAV, OGG, AAC, FLAC, M4A like VLC)
+- **Video Player**: Full-featured player with standard media controls (supports MP4, WebM, AVI, MKV, MOV, WMV like VLC)
+- **Image Viewer**: Zoom controls and fullscreen viewing capabilities (supports JPG, PNG, GIF, SVG, WebP, BMP, TIFF)
 - **PDF Viewer**: Page navigation and embedded PDF rendering
 - **Text Viewer**: Plain text and Markdown rendering support
+- **Archive Viewer**: Browse archive contents, extract files, directory navigation (supports ZIP, RAR, 7Z, TAR, GZIP like 7-Zip)
 
 ### UI Components
 - **Design System**: shadcn/ui components with New York style variant
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Dark Mode**: CSS variables-based theming support
+- **Cross-Device Support**: PWA capabilities with mobile app-like experience
+- **Responsive Design**: Mobile-first approach with Tailwind CSS, optimized for phones, tablets, and desktops
+- **Dark Mode**: CSS variables-based theming support for all device types
 - **Accessibility**: ARIA-compliant components from Radix UI
+- **Universal Compatibility**: Works on iOS, Android, Windows, macOS, and Linux devices
 
 ## Data Flow
 

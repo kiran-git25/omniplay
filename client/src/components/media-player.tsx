@@ -4,6 +4,7 @@ import VideoPlayer from "./viewers/video-player";
 import ImageViewer from "./viewers/image-viewer";
 import PdfViewer from "./viewers/pdf-viewer";
 import TextViewer from "./viewers/text-viewer";
+import ArchiveViewer from "./viewers/archive-viewer";
 import { PlayIcon } from "lucide-react";
 
 interface MediaPlayerProps {
@@ -37,6 +38,8 @@ export default function MediaPlayer({ currentMedia }: MediaPlayerProps) {
         } else {
           return <TextViewer file={currentMedia} />;
         }
+      case 'archive':
+        return <ArchiveViewer file={currentMedia} />;
       default:
         return (
           <div className="text-center text-gray-400">

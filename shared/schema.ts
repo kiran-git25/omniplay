@@ -10,7 +10,7 @@ export const mediaFiles = pgTable("media_files", {
   mimeType: text("mime_type").notNull(),
   size: integer("size").notNull(),
   url: text("url").notNull(),
-  type: text("type").notNull(), // 'audio', 'video', 'image', 'document'
+  type: text("type").notNull(), // 'audio', 'video', 'image', 'document', 'archive'
   duration: integer("duration"), // for audio/video in seconds
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
