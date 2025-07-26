@@ -8,6 +8,7 @@ A privacy-first, browser-based media and archive player.
 - Supports video, audio, images, zip/rar archives, PDF, DOCX, XLSX, etc.
 - Built with React, TypeScript, Tailwind, and Vite
 
+
 ## How to Run
 ```bash
 npm install
