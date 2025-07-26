@@ -1,0 +1,10 @@
+^I:\OMNIPLAY\OMNIPLAY\BUILD\WINDOWS\X64\CMAKEFILES\35E860A1019D4FD77DC6C50D04D44E2F\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

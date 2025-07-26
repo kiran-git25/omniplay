@@ -1,0 +1,20 @@
+name: omniplay
+description: Universal open-source audio, video, and document player/reader.
+version: 0.1.0
+author: Kiran Git <kiran-git25@github.com>
+homepage: https://github.com/kiran-git25/omniplay
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/

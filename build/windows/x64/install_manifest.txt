@@ -1,0 +1,11 @@
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/icudtl.dat
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/flutter_windows.dll
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.json
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/assets/.keep
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/FontManifest.json
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/kernel_blob.bin
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/NativeAssetsManifest.json
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES.Z
+I:/OmniPlay/omniplay/build/windows/x64/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

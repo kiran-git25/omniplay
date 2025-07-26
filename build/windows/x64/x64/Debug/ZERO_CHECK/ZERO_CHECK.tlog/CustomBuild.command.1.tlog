@@ -1,0 +1,10 @@
+^I:\OMNIPLAY\OMNIPLAY\BUILD\WINDOWS\X64\CMAKEFILES\35E860A1019D4FD77DC6C50D04D44E2F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SI:/OmniPlay/omniplay/windows -BI:/OmniPlay/omniplay/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file I:/OmniPlay/omniplay/build/windows/x64/omniplay.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
