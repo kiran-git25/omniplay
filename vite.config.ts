@@ -1,11 +1,6 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-export default defineConfig(async () => {
-  const cartographer = await import('@replit/vite-plugin-cartographer');
-  return {
-    plugins: [cartographer.default()],
-    build: {
-      target: 'esnext'
-    }
-  };
+export default defineConfig({
+  plugins: [react()],
 });
