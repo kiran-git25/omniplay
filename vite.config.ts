@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
-import cartographer from '@replit/vite-plugin-cartographer';
 
-export default defineConfig({
-  plugins: [cartographer()],
-  build: {
-    target: 'esnext'
-  }
+export default defineConfig(async () => {
+  const cartographer = await import('@replit/vite-plugin-cartographer');
+  return {
+    plugins: [cartographer.default()],
+    build: {
+      target: 'esnext'
+    }
+  };
 });
