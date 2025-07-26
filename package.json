@@ -1,13 +1,18 @@
 {
   "name": "omniplay",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@replit/vite-plugin-cartographer": "^0.1.0",
+    "three": "^0.158.0"
+  },
   "devDependencies": {
-    "vite": "^5.0.0"
+    "vite": "^5.0.0",
+    "@types/three": "^0.158.0"
   }
 }
